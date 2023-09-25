@@ -3,6 +3,7 @@
 using namespace std;
 void patron1(int **);
 void patron2(int **);
+void patron3(int **);
 
 int main()
 {
@@ -17,7 +18,7 @@ int main()
                 matriz[i][j] = 0;
             }
         }
-        patron2(matriz);
+        patron3(matriz);
         for(int i=0; i<8;i++){
             for(int j=0; j<8;j++){
                 cout<<matriz[i][j]<<" ";
@@ -69,4 +70,29 @@ void patron2(int **matriz)
         cont-=1;
     }
 
+}
+
+void patron3(int **matriz)
+{
+    int cont=0, aux=0;
+    for(int i=0; i<8;i++){
+        for(int j=0; j<8; j++){
+            if(cont<2){
+                matriz[i][j]=1;
+                cont+=1;
+            }
+            else if(cont==2){
+                cont=0;
+            }
+        }
+        cont=aux;
+        if(i%2==0){
+            if(aux==0){
+                aux=2;
+            }
+            else if(aux=2){
+                aux=0;
+            }
+        }
+    }
 }
