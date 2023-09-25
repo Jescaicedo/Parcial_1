@@ -2,6 +2,7 @@
 
 using namespace std;
 void patron1(int **);
+void patron2(int **);
 
 int main()
 {
@@ -16,8 +17,7 @@ int main()
                 matriz[i][j] = 0;
             }
         }
-        patron1(matriz);
-
+        patron2(matriz);
         for(int i=0; i<8;i++){
             for(int j=0; j<8;j++){
                 cout<<matriz[i][j]<<" ";
@@ -56,4 +56,17 @@ void patron1(int **matriz)
             ban=true;
         }
     }
+}
+
+void patron2(int **matriz)
+{
+    for(int i=0; i<8; i++){
+        matriz[i][i]=1;
+    }
+    int cont=7;
+    for(int i=0; i<8;i++){
+        matriz[i][cont]=1;
+        cont-=1;
+    }
+
 }
