@@ -5,6 +5,7 @@ void patron1(int **);
 void patron2(int **);
 void patron3(int **);
 void patron4(int **);
+void encendertodosleds(int **);
 
 int main()
 {
@@ -19,7 +20,7 @@ int main()
                 matriz[i][j] = 0;
             }
         }
-        patron4(matriz);
+        encendertodosleds(matriz);
         for(int i=0; i<8;i++){
             for(int j=0; j<8;j++){
                 cout<<matriz[i][j]<<" ";
@@ -118,6 +119,15 @@ void patron4(int **matriz)
         }
         else if(!ban){
             lim-=1;
+        }
+    }
+}
+
+void encendertodosleds(int **matriz)
+{
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            matriz[i][j] = 1;
         }
     }
 }
